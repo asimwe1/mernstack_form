@@ -40,10 +40,10 @@ export const CreateTaskModal = ({ onRequestClose, open }) => {
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-4">
           <label>Title</label>
           <input
-            className="input border-t-0 "
+            className="input border-t-0 border-r-0 "
             type="text"
             name="title"
-            placeholder="eg: Go to school."
+            placeholder="eg: Cleaning the house."
             onChange={(e) =>
               setFormData((prev) => ({ ...prev, title: e.target.value }))
             }
@@ -52,9 +52,9 @@ export const CreateTaskModal = ({ onRequestClose, open }) => {
           <textarea
             rows={5}
             type="text"
-            className="input"
+            className="input border-b-[0.5rem]"
             name="title"
-            placeholder="eg: Wash up and do a short prep"
+            placeholder="eg: Getting the trash out and mdoing the dished"
             onChange={(e) =>
               setFormData((prev) => ({ ...prev, description: e.target.value }))
             }

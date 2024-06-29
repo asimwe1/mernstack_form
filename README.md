@@ -32,7 +32,6 @@ Open [http://localhost:4000](http://localhost:4000) to use is as backend for you
 ## Previews
 
 #### form
-<img src=""> 
-
+![image](./frontend/public/form.png)
 #### Display Page
-<img src="">
+![image](./frontend/public/image.png)
