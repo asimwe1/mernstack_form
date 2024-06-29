@@ -40,7 +40,7 @@ export const CreateTaskModal = ({ onRequestClose, open }) => {
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-4">
           <label>Title</label>
           <input
-            className="input"
+            className="input border-t-0 "
             type="text"
             name="title"
             placeholder="eg: Go to school."
