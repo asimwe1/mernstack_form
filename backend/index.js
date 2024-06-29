@@ -7,6 +7,8 @@ const debug = require("debug")("api");
 const taskRoutes = require("./routes/tasks");
 const { connectDb } = require("./config/connection");
 
+const port = process.env.PORT;
+
 // LOAD ENV VARS
 dotenv.config();
 
@@ -18,12 +20,16 @@ async function main() {
 
   const options = {};
 
+  app.get("/", (req, res) => {
+    res.send("service is running......")
+  })
+
   app.use(bodyParser.json());
   app.use(cors({ origin: "*" }));
   app.use("/api/v1/tasks", taskRoutes);
 
-  app.listen(process.env.PORT, () => {
-    console.log("🚀 server started running on port 4000");
+  app.listen(port, () => {
+    console.log(`server started running🏃 on port ${port}`);
   });
 }
 
