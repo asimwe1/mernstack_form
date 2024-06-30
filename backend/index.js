@@ -21,11 +21,12 @@ async function main() {
   const options = {};
 
   app.get("/", (req, res) => {
-    res.send("service is running......")
-  })
+    res.send("service is running......");
+  });
 
+  // Update CORS to allow requests from your frontend
+  app.use(cors({ origin: "https://mernstack-formclient-7rx0uktgy-landrysb.vercel.app" }));
   app.use(bodyParser.json());
-  app.use(cors({ origin: "*" }));
   app.use("/api/v1/tasks", taskRoutes);
 
   app.listen(port, () => {
@@ -34,4 +35,3 @@ async function main() {
 }
 
 connectDb().then(() => main());
-
