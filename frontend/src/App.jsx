@@ -5,7 +5,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-
 import Home from "./pages/Home";
 import EditTodoForm from "./pages/EditTodoForm";
 import { TaskContextProvider } from "./context/TaskProvider";
@@ -23,9 +22,9 @@ const router = createBrowserRouter(
 const client = new QueryClient();
 
 const fetchTasks = async () => {
-  const tasks = await makeApiRequest('tasks');
+  const tasks = await makeApiRequest("tasks");
   setTasks(tasks);
-}
+};
 
 function App() {
   return (
