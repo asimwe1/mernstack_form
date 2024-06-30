@@ -9,6 +9,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import Home from "./pages/Home";
 import EditTodoForm from "./pages/EditTodoForm";
 import { TaskContextProvider } from "./context/TaskProvider";
+import { makeApiRequest } from "./apis/utils";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +21,11 @@ const router = createBrowserRouter(
 );
 
 const client = new QueryClient();
+
+const fetchTasks = async () => {
+  const tasks = await makeApiRequest('tasks');
+  setTasks(tasks);
+}
 
 function App() {
   return (
